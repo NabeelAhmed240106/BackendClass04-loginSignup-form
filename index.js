@@ -1,16 +1,15 @@
-// console.log("Server is starting now.....")
-
-// console.log("object")
 import chalk from "chalk";
 import express from "express";
 import mongoose from "mongoose";
 import { userModel } from "./model/userSchema.js";
 import bcrypt from "bcryptjs";
-
+import cors from 'cors'
 const app = express();
+
 
 // body parser middleware
 app.use(express.json());
+app.use(cors());
 
 const PORT = 2401;
 
@@ -56,7 +55,6 @@ app.post("/api/signup", async (req, res) => {
 
     res.status(200).json({
         message: "Create user successfully",
-        saveData,
     });
     } catch(err){
         res.status(500).json({
