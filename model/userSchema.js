@@ -1,5 +1,31 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
+
+// const userSchema = new mongoose.Schema({
+//     name: {
+//         type: String,
+//         required: true,
+//     },
+//     email: {
+//         type: String, 
+//         required: true,
+//         unique: true,  
+//     },
+//     password: {
+//         type: String,
+//         required: true, 
+//     },
+//     created_at:{
+//         type: Date,
+//         default: Date.now(),
+//     },
+// })   
+
+
+// export const userModel = mongoose.model("reactnativeUsers", userSchema);
+
+
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -7,20 +33,18 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     email: {
-        type: String, 
+        type: String,
         required: true,
-        unique: true,  
+        unique: true,
     },
     password: {
         type: String,
-        required: true, 
+        required: true,
     },
-    created_at:{
+    created_at: {
         type: Date,
-        default: Date.now(),
+        default: Date.now,   
     },
-})   
+});
 
-
-export const userModel = mongoose.model("users", userSchema);
-
+export default mongoose.model("reactnativeUsers", userSchema);
